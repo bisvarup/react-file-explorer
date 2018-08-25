@@ -1,0 +1,24 @@
+i {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.yellow {
+    color: rgb(122, 122, 62);
+}
+
+.lightGray {
+    color: rgb(148, 148, 150);
+}
+
+.blue {
+    color: rgb(72, 72, 228);
+}
+
+.red {
+    color: red;
+}
+
+.lightRed {
+    color: rgb(233, 143, 143);
+}
