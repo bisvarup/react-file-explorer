@@ -3,10 +3,14 @@ import { connect } from "react-redux";
 import Icon from "../../../Icon/Icon";
 import SubList from "./SubList";
 import { SET_L1_PATH } from "../../../../actions";
+import * as hepler from "../../../../helper/helper";
+
+// TODO: create the threaded tree datastructure to hold the files and folders.
 
 class List extends Component {
   constructor(props) {
     super(props);
+    const children = hepler.formatChildren(props.files["Game play resources"]);
     this.state = {
       files: props.files,
       level1: {
