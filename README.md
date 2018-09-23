@@ -1,6 +1,6 @@
 # TODO
 
-The level1 title of game is the root. From there two folders aka installation and resorce dependency folders emerge. Inside them are other files. So the ROOT is l1 folder and the rest follows a tree. So build the corresponding tree for the data and find a way of sending this data to other components. Save it to redux maybe ?
+There is a bug in the Tree.js file. The tree is not getting created properly. Possible format the representation of the tree.
 
 # 9/22/2018
 

@@ -15,5 +15,19 @@ class Tree {
   /**
    * Make the child nodes of the root node
    */
-  makeChildren() {}
+  makeChildren() {
+    Object.keys(this.allChildNodes).forEach(n => {
+      if (typeof this.allChildNodes[n] === "object") {
+        const child = new Tree(n, this.allChildNodes[n]).getTree();
+        console.log("child = ", child);
+        this.root.edges.concat([child]);
+      }
+    });
+  }
+
+  getTree() {
+    return this.root;
+  }
 }
+
+export default Tree;
