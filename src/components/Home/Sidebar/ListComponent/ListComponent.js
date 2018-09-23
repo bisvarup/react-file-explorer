@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Icon from "../../../Icon/Icon";
 import SubList from "./SubList";
+import { SET_L1_PATH } from "../../../../actions";
 
 class List extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ const dispatchMethodsToReduxState = dispatch => {
   return {
     setL1Folder: (path = "") =>
       dispatch({
-        type: "SET_L1_PATH",
+        type: SET_L1_PATH,
         payload: { path }
       })
   };
