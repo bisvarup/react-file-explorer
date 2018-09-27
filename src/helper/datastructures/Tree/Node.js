@@ -1,12 +1,21 @@
-class Node {
-  constructor(title) {
-    this.data = title;
-    this.edges = [];
+class RootNode {
+  constructor(title, parent = null) {
+    this.type = "root";
+    this.title = title;
+    this.parent = parent;
+    this.children = [];
   }
-
-  getData() {
-    return this.data;
+  addChild(child) {
+    this.children.push(child);
   }
 }
 
-export default Node;
+class LeafNode {
+  constructor(name, type, parent) {
+    this.name = name;
+    this.type = type;
+    this.parent = parent;
+  }
+}
+
+export { RootNode, LeafNode };

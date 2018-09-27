@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Icon from "../../../Icon/Icon";
 import SubList from "./SubList";
 import { SET_L1_PATH } from "../../../../actions";
-import * as hepler from "../../../../helper/helper";
 import Tree from "../../../../helper/datastructures/Tree/Tree";
 
 // TODO: create the threaded tree datastructure to hold the files and folders.
@@ -11,9 +10,8 @@ import Tree from "../../../../helper/datastructures/Tree/Tree";
 class List extends Component {
   constructor(props) {
     super(props);
-    const children = hepler.formatChildren(props.files["Game play resources"]);
-    let tree = new Tree(this.props.files.title, children);
-    console.log(tree.getTree());
+    const tree = new Tree(props.files);
+    console.log(tree);
     this.state = {
       files: props.files,
       level1: {
