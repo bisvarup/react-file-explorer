@@ -1,3 +1,9 @@
+# 9/28/2018
+
+# TODO
+
+When the app loads all the folders must be listed in the explorer
+
 # TODO
 
 There is a bug in the Tree.js file. The tree is not getting created properly. Possible format the representation of the tree.
