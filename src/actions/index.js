@@ -1,3 +1,3 @@
-import { SET_L1_PATH, ADD_TO_PATH } from "./actions";
+import { SET_PATH, SET_ROOT } from "./actions";
 
-export { SET_L1_PATH, ADD_TO_PATH };
+export { SET_PATH, SET_ROOT };

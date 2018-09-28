@@ -2,47 +2,70 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Icon from "../../../Icon/Icon";
 import SubList from "./SubList";
-import { SET_L1_PATH } from "../../../../actions";
-import Tree from "../../../../helper/datastructures/Tree/Tree";
-
-// TODO: create the threaded tree datastructure to hold the files and folders.
+import { SET_PATH, SET_ROOT } from "../../../../actions";
 
 class List extends Component {
   constructor(props) {
     super(props);
-    const root = new Tree(props.files);
-    console.log(root);
     this.state = {
       files: props.files,
-      level1: {
-        found: false,
-        elem: null
-      }
+      expand: false,
+      childrenNodes: null
     };
   }
 
-  expandFolder(e) {
-    this.props.setL1Folder(this.state.files.title);
-    if (this.state.level1.found) {
-      this.setState({ level1: { found: false, elem: null } });
-    } else {
-      const subFolders = this.state.files["Game play resources"];
-      let elem = (
-        <ul>
-          {Object.keys(subFolders).map((key, i) => {
-            const obj = {
-              title: key,
-              files: this.state.files["Game play resources"][key]
-            };
+  calculatePath() {
+    let root = this.props.root;
+    let ar = [];
+    while (root != null) {
+      ar.push(root.title);
+      root = root.parent;
+    }
+    return ar.reverse().join("/");
+  }
+
+  generateSubLists() {
+    return (
+      <ul>
+        {this.props.root.children.map((element, index) => {
+          if (element.class === "root") {
             return (
-              <li key={i}>
-                <SubList obj={obj} />
+              <li key={index}>
+                <ul>
+                  <List
+                    root={element}
+                    setPath={this.props.setPath}
+                    setRoot={this.props.setRoot}
+                  />
+                </ul>
               </li>
             );
-          })}
-        </ul>
-      );
-      this.setState({ level1: { found: true, elem } });
+          } else {
+            return (
+              <li key={index}>
+                <ul>
+                  <SubList root={element} />
+                </ul>
+              </li>
+            );
+          }
+        })}
+      </ul>
+    );
+  }
+
+  setReduxState() {
+    this.props.setPath(this.calculatePath());
+    this.props.setRoot(this.props.root);
+  }
+
+  expandFolder(e) {
+    this.setReduxState();
+    if (!this.state.expand) {
+      const elem = this.generateSubLists();
+      this.setState({ ...this.state, expand: true, childrenNodes: elem });
+    } else {
+      this.setState({ ...this.state, expand: false, childrenNodes: null });
     }
   }
 
@@ -50,25 +73,26 @@ class List extends Component {
     return (
       <li>
         <div onClick={this.expandFolder.bind(this)} data-id={this.props.index}>
-          <Icon class="fa-folder" color="yellow" /> {this.props.file.title}
+          <Icon class="fa-folder" color="yellow" /> {this.props.root.title}
         </div>
-        {this.state.level1.found && this.state.level1.elem}
+        {this.state.expand && this.state.childrenNodes}
       </li>
     );
   }
 }
 
-const dispatchMethodsToReduxState = dispatch => {
+const dispatchMethodsToReduxProps = dispatch => {
   return {
-    setL1Folder: (path = "") =>
+    setPath: (path = "") =>
       dispatch({
-        type: SET_L1_PATH,
+        type: SET_PATH,
         payload: { path }
-      })
+      }),
+    setRoot: (root = null) => dispatch({ type: SET_ROOT, payload: { root } })
   };
 };
 
 export default connect(
   null,
-  dispatchMethodsToReduxState
+  dispatchMethodsToReduxProps
 )(List);

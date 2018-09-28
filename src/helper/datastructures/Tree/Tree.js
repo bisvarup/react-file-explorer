@@ -29,6 +29,9 @@ class Tree {
       dependencyObj.addChild(child);
     });
   }
+  getRoot() {
+    return this.root;
+  }
 }
 
 export default Tree;

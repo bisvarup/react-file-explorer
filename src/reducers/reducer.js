@@ -1,15 +1,17 @@
-import { SET_L1_PATH, ADD_TO_PATH } from "../actions";
+import { SET_PATH, SET_ROOT } from "../actions";
 
 const initialState = {
-  path: "/"
+  path: "/",
+  root: null
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_L1_PATH:
+    case SET_PATH:
       return { ...state, path: "/" + action.payload.path };
-    case ADD_TO_PATH:
-      return { ...state, path: state.path + "/" + action.payload.path };
+    case SET_ROOT:
+      console.log(action.payload.root);
+      return { ...state, root: action.payload.root };
     default:
       break;
   }

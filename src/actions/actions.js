@@ -1,3 +1,3 @@
-const SET_L1_PATH = "SET_L1_PATH";
-const ADD_TO_PATH = "ADD_TO_PATH";
-export { SET_L1_PATH, ADD_TO_PATH };
+const SET_PATH = "SET_PATH";
+const SET_ROOT = "SET_ROOT";
+export { SET_PATH, SET_ROOT };
