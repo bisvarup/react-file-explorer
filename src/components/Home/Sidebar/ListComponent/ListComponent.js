@@ -10,8 +10,8 @@ import Tree from "../../../../helper/datastructures/Tree/Tree";
 class List extends Component {
   constructor(props) {
     super(props);
-    const tree = new Tree(props.files);
-    console.log(tree);
+    const root = new Tree(props.files);
+    console.log(root);
     this.state = {
       files: props.files,
       level1: {
