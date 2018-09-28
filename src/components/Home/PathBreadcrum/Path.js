@@ -3,18 +3,32 @@ import { connect } from "react-redux";
 import "./Path.css";
 
 class Path extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return <div className="path">{this.props.path}</div>;
+    if (this.props.path) {
+      return (
+        <div className="path">
+          {this.props.path.map(e => {
+            return <div className="pathFolder"> > {e}</div>;
+          })}
+        </div>
+      );
+    } else {
+      return "";
+    }
   }
 }
 
-const mapStateToProps = state => {
+const mapReduxStateToCurrenntProps = state => {
   return {
     path: state.path
   };
 };
 
 export default connect(
-  mapStateToProps,
+  mapReduxStateToCurrenntProps,
   null
 )(Path);

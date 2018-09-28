@@ -1,0 +1,11 @@
+.explore-files {
+  padding: 1rem;
+}
+.explore-files div {
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid rgb(206, 203, 203);
+  display: inline-block;
+  margin-right: 2rem;
+  padding: 0.5rem;
+}

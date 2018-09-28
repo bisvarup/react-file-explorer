@@ -1,16 +1,16 @@
 .asideContainer {
-    box-sizing: border-box;
-    border: 1px solid rgb(82, 82, 82);
-    height: 100%;
-    border-radius: 2px;
-    overflow: scroll;
+  box-sizing: border-box;
+  border-right: 1px solid rgb(82, 82, 82);
+  height: 100%;
+  border-radius: 2px;
+  overflow: scroll;
 }
 
 ul {
-    list-style: none;
-    padding-left: 10px;
-    word-break: break-all;
+  list-style: none;
+  padding-left: 10px;
+  word-break: break-all;
 }
 ul li {
-    cursor: pointer;
+  cursor: pointer;
 }

@@ -21,7 +21,7 @@ class List extends Component {
       ar.push(root.title);
       root = root.parent;
     }
-    return ar.reverse().join("/");
+    return ar.reverse();
   }
 
   generateSubLists() {
