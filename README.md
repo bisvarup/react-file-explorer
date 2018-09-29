@@ -1,3 +1,6 @@
+# Screenshots
+![Drag Racing](Dragster.jpg)
+
 # 9/29/2018
 
 # TODO
