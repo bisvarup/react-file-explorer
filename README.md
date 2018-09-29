@@ -1,10 +1,17 @@
 # Screenshots
+
 ![File Explorer](https://github.com/bisho1995/file-explorer/blob/master/Screenshots/1.png)
 ![File Explorer](https://github.com/bisho1995/file-explorer/blob/master/Screenshots/2.png)
 ![File Explorer](https://github.com/bisho1995/file-explorer/blob/master/Screenshots/3.png)
 ![File Explorer](https://github.com/bisho1995/file-explorer/blob/master/Screenshots/4.png)
 ![File Explorer](https://github.com/bisho1995/file-explorer/blob/master/Screenshots/5.png)
 ![File Explorer](https://github.com/bisho1995/file-explorer/blob/master/Screenshots/6.png)
+
+# Points
+
+1. The application uses a custom m-ary datastructure to represent the files and folders.
+2. The state is managed with basically two key pieces, path and root. Root is the current root and path is the from root to current node.
+3. You can view folders and files from the left sidebar, explorer and the path breadcrumb on top.
 
 # 9/29/2018
 
