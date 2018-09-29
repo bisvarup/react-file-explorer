@@ -1,3 +1,9 @@
+# 9/29/2018
+
+# TODO
+
+Some file and folder names are too long. Trim them while displaying but on hover show them.
+
 # 9/28/2018
 
 # TODO
