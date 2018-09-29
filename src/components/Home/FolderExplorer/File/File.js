@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Icon from "../../../Icon/Icon";
 import { SET_ROOT, SET_PATH } from "../../../../actions";
+import { calculatePath } from "../../../../helper/helper";
 
 /**
  * This is the invidual icons of the explorer. Now in linux both folder
@@ -20,7 +21,7 @@ class File extends Component {
      * root of state.
      */
     if (this.props.root.class === "root") {
-      this.props.setPath(this.calculatePath());
+      this.props.setPath(calculatePath(this.props.root));
       this.props.setRoot(this.props.root);
     }
   }
@@ -32,20 +33,6 @@ class File extends Component {
         {this.props.name}
       </div>
     );
-  }
-  /**
-   * Calculate the path from the current node to the root node
-   * of the tree. This is basically path from root to a node in
-   * the tree.
-   */
-  calculatePath() {
-    let root = this.props.root;
-    let ar = [];
-    while (root != null) {
-      ar.push(root.title);
-      root = root.parent;
-    }
-    return ar.reverse();
   }
 }
 /**

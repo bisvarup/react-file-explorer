@@ -1,5 +1,5 @@
 import { SET_PATH, SET_ROOT } from "../actions";
-import initialState from "./defaultState";
+import { initialState } from "./defaultState";
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

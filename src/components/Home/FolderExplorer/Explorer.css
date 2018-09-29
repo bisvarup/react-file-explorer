@@ -1,5 +1,9 @@
 .explore-files {
   padding: 1rem;
+  border: 1px solid rgb(180, 180, 180);
+  height: 80vh;
+  width: 100%;
+  overflow: scroll;
 }
 .explore-files div {
   cursor: pointer;
@@ -8,4 +12,6 @@
   display: inline-block;
   margin-right: 2rem;
   padding: 0.5rem;
+  width: 200px;
+  margin-top: 1rem;
 }

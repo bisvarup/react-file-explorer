@@ -28,4 +28,13 @@ const formatChildren = children => {
   });
   return children;
 };
-export { formatChildren };
+
+const calculatePath = root => {
+  let ar = [];
+  while (root != null) {
+    ar.push(root);
+    root = root.parent;
+  }
+  return ar.reverse();
+};
+export { formatChildren, calculatePath };

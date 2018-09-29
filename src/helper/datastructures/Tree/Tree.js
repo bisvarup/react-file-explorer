@@ -1,8 +1,9 @@
 import { RootNode, LeafNode } from "./Node";
 
 class Tree {
-  constructor(tree) {
+  constructor(tree, parent = null) {
     this.root = new RootNode(tree.title);
+    this.root.parent = parent;
     const gameObj = tree["Game play resources"];
     const installation = gameObj["Installation"];
     const dependency = gameObj["Resource Dependency"];

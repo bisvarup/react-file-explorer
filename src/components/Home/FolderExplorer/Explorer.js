@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
-import Icon from "../../Icon/Icon";
 import File from "./File";
 import "./Explorer.css";
 

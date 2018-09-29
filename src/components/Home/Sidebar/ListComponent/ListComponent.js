@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Icon from "../../../Icon/Icon";
 import SubList from "./SubList";
 import { SET_PATH, SET_ROOT } from "../../../../actions";
+import { calculatePath } from "../../../../helper/helper";
 
 class List extends Component {
   constructor(props) {
@@ -12,16 +13,6 @@ class List extends Component {
       expand: false,
       childrenNodes: null
     };
-  }
-
-  calculatePath() {
-    let root = this.props.root;
-    let ar = [];
-    while (root != null) {
-      ar.push(root.title);
-      root = root.parent;
-    }
-    return ar.reverse();
   }
 
   generateSubLists() {
@@ -55,7 +46,7 @@ class List extends Component {
   }
 
   setReduxState() {
-    this.props.setPath(this.calculatePath());
+    this.props.setPath(calculatePath(this.props.root));
     this.props.setRoot(this.props.root);
   }
 
