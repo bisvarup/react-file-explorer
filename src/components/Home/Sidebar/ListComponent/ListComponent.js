@@ -64,7 +64,7 @@ class List extends Component {
     return (
       <li>
         <div onClick={this.expandFolder.bind(this)} data-id={this.props.index}>
-          <Icon class="fa-folder" color="yellow" /> {this.props.root.title}
+          <Icon class="fa-folder" color="folder" /> {this.props.root.title}
         </div>
         {this.state.expand && this.state.childrenNodes}
       </li>

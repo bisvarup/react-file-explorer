@@ -5,3 +5,6 @@
   margin: 0.5rem;
   cursor: pointer;
 }
+.pathFolder:hover {
+  background: rgb(231, 231, 231);
+}

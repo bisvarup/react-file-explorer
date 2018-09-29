@@ -20,15 +20,9 @@ export default class Home extends Component {
             <Sidebar />
           </div>
           <div className="col-sm-9">
-            <div className="row">
-              <div className="col-sm-12">
-                <Path />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-12">
-                <Explorer />
-              </div>
+            <div className="explorerContainer">
+              <Path />
+              <Explorer />
             </div>
           </div>
         </div>

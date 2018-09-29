@@ -7,6 +7,9 @@ class Explorer extends Component {
   render() {
     return (
       <div className="explore-files">
+        <h1 className="explorerHeading">
+          {this.props.root.children[0].class === "root" ? "Folders" : "Files"}
+        </h1>
         {this.props.root &&
           this.props.root.children.map((element, index) => {
             if (element.class === "root") {
@@ -14,7 +17,7 @@ class Explorer extends Component {
                 <File
                   key={index}
                   type={"fa-folder"}
-                  color={"yellow"}
+                  color={"folder"}
                   name={element.title}
                   root={element}
                 />
