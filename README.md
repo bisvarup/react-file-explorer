@@ -13,6 +13,14 @@
 2. The state is managed with basically two key pieces, path and root. Root is the current root and path is the from root to current node.
 3. You can view folders and files from the left sidebar, explorer and the path breadcrumb on top.
 
+# 28/10/2018
+
+- Refactor the code into container component architecture. **looks horrible now**
+- implement the drag and drop
+- create a small info window on right to display some information of the file or folder on focus.
+- open folders on double click only, single folder selects them just
+- Add more docs.
+
 # 9/29/2018
 
 # TODO
